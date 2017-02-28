@@ -1,0 +1,14 @@
+net: "./inception_v3_train_test.prototxt"
+test_iter: 200
+test_interval: 2000
+base_lr: 0.001
+momentum: 0.9
+weight_decay: 0.0005
+lr_policy: "poly"
+power: 0.5
+display: 1
+max_iter: 100000
+snapshot: 2000
+snapshot_prefix: "model/icv_centerloss"
+solver_mode: GPU
+#device_id: [0,1]

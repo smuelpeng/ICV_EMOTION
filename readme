@@ -1,0 +1,4 @@
+This git is built for icv emotion challenge.
+caffe: framework for training
+train: training code 
+test: test code
