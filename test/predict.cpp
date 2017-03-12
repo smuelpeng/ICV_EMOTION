@@ -11,12 +11,9 @@
 #include <sstream>
 #include <omp.h>
 using namespace std;
-
 static bool cmp_desc(const std::pair<int, float> &item1, const std::pair<int, float> &item2){
         return (item1.second > item2.second);
 }
-
-
 void image_to_blob_need_type(cv::Mat image, float *p_data){
 	int channel = image.channels();
 	int height = image.rows;
@@ -54,7 +51,6 @@ nets[i]=new caffe::Net<float>(deploy,caffe::TEST);
 nets[i]->CopyTrainedLayersFrom(model);
 }
 vector<string> result_str_vec(pic_name_vec.size());
-  #pragma omp parallel for num_threads (10)
 for(int i=0;i<pic_name_vec.size();i++){
 	int cpu_id=omp_get_thread_num();
 	caffe::Net<float> *net=nets[cpu_id];
