@@ -2,3 +2,7 @@ This git is built for icv emotion challenge.
 caffe: framework for training
 train: training code 
 test: test code
+usage:
+cd test
+sh cmd.sh test.txt(add absolute path to image path)
+
